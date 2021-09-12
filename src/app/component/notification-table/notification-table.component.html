@@ -1,0 +1,102 @@
+<table class="pc-table">
+  <thead class="thead-light">
+  <tr>
+    <th *ngFor="let column of visibleColumns" [hidden]="!column.visible" [class]="column.colclass">
+      {{column.title}}
+      <app-sortable-column
+        *ngIf="column.sortColumn"
+        [sortColumnName]="column.sortColumn"
+        [sorted]="sort === column.sortColumn"
+        (sortColumnChanged)="tableSortEvent($event)">
+      </app-sortable-column>
+    </th>
+    <th class="th-dropdown">
+      <div class="th-dropdown-wrapper">
+        <i class="fa fa-ellipsis-v"></i>
+        <div class="th-dropdown-content">
+          <div class="th-dropdown-content-menu">
+            <div class="th-dropdown-content-menu-option"
+                 *ngFor="let column of visibleColumns; let i = index" (click)="setVisibility(i)">
+              <i class="fa" [class.fa-check-square-o]="column.visible"
+                 [class.fa-square-o]="!column.visible"></i>{{column.title}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </th>
+    <th>
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>Actions</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <div class="text-center">
+            <button class="btn btn-dark" (click)="onBuy()">Buy Order</button>
+          </div>
+          <div class="text-center">
+            <button class="text-center" type="button" class="btn btn-dark" (click)="onSell()">Sell Order</button>
+          </div>
+        </div>
+      </div>
+    </th>
+    <th>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of countedOrders">
+    <td *ngIf="visibleColumns[0].visible" class="centered">{{order.id}}</td>
+    <td *ngIf="visibleColumns[1].visible" class="centered">{{order.created | date: 'medium'}}</td>
+    <td *ngIf="visibleColumns[2].visible" class="centered">{{order.coin.name}}</td>
+    <td *ngIf="visibleColumns[3].visible" class="centered">{{order.amount  }}</td>
+    <td *ngIf="visibleColumns[4].visible" class="centered">{{order.averagePrice }}$</td>
+    <td *ngIf="visibleColumns[5].visible" class="centered">{{order.coin.price  }}$</td>
+    <td *ngIf="visibleColumns[6].visible" class="centered">{{order.quantity}}</td>
+    <td *ngIf="visibleColumns[7].visible" class="centered">{{order.cost  }}$</td>
+    <td *ngIf="visibleColumns[8].visible" class="centered">{{order.margin}}</td>
+    <td *ngIf="visibleColumns[9].visible" class="centered">{{order.coin.volume24h}}</td>
+    <td *ngIf="visibleColumns[10].visible" class="centered">{{order.coin.percentChange1h}}%</td>
+    <td *ngIf="visibleColumns[11].visible" class="centered">{{order.coin.percentChange24h}}%</td>
+    <td *ngIf="visibleColumns[12].visible" class="centered"
+        [style]="order.profit<0?'background: #f8d7da':'background: #d4edda'">{{order.profit}}$
+    </td>
+    <td *ngIf="visibleColumns[13].visible"
+        [style]="order.profitInPercents<0?'background: #f8d7da':'background: #d4edda'"
+        class="centered"> {{order.profitInPercents}}%
+    </td>
+    <td *ngIf="visibleColumns[14].visible" class="centered">
+      <button (click)="onEdit(order)" class="btn btn-outline-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-fill"
+             viewBox="0 0 16 16">
+          <path
+            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+        </svg>
+      </button>
+    </td>
+    <td *ngIf="visibleColumns[15].visible" class="centered">
+      <button (click)="onDelete(order.id)" class="btn btn-outline-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+          <path
+            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+        </svg>
+      </button>
+    </td>
+    <td *ngIf="visibleColumns[16].visible" class="centered">
+      <button (click)="onNotification(order)" class="btn btn-outline-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill"
+             viewBox="0 0 16 16">
+          <path
+            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+        </svg>
+      </button>
+    </td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-center">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="currentPage" [pageSize]="paginationSize" [maxSize]="8"
+                  [rotate]="true" [boundaryLinks]="true" (pageChange)="onPageChange($event)"></ngb-pagination>
+</div>
+<div *ngIf="countedOrders.length<7" style="height: 200px"></div>

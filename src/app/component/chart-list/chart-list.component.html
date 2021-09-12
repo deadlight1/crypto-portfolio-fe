@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-12">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Start Price</th>
+        <th scope="col">Current Price</th>
+        <th scope="col">Profit</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td >{{portfolioStatistic.startPrice}}</td>
+        <td>{{portfolioStatistic.currentPrice}}</td>
+        <td [style]="portfolioStatistic.profit<0?'background: #f8d7da':'background: #d4edda'">{{portfolioStatistic.profit+'$'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-6">
+    <app-horizontal-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                          [barChartLegend]="barChartLegend" [barChartOptions]="barChartOptions"
+                          [barChartType]="barChartType"></app-horizontal-chart>
+  </div>
+  <div class="col-6">
+    <app-horizontal-chart
+      [barChartData]="barChartDataOrder" [barChartLabels]="barChartLabelsOrder"
+      [barChartLegend]="barChartLegendOrder" [barChartOptions]="barChartOptionsOrder"
+      [barChartType]="barChartTypeOrder"></app-horizontal-chart>
+  </div>
+</div>

@@ -1,0 +1,427 @@
+@import '../sortable-column/constants';
+.alert-danger{
+  background: red;
+}
+.font-weight-bolder {
+  font-weight: 3000;
+  font-size: 100px;
+}
+.alert-success{
+  background: green;
+}
+$color-transparent: rgba(0, 0, 0, 0);
+$color-1: #ffffff;
+$color-2: #5C6E78;
+$color-3: #F8F9F9;
+$color-4: #CCD4D7;
+$color-5: #A8B4BB;
+$color-6: #C3C3C3;
+$color-7: #666666;
+$color-8: #5C6E78;
+$color-9: #5C6E78;
+$color-10: #364046;
+$color-11: #A14046;
+// $color-11-t: #A1404622;
+$color-12: #5C6E78;
+$color-13: #5C6E78;
+$color-14: rgba(0, 0, 0, .2);
+$color-15: #5C6E78;
+$color-16: #DCE1E4;
+$color-17: rgba(0, 0, 0, .16);
+$color-18: rgba(0, 0, 0, 0);
+$color-title-light: $color-2;
+$color-19: #71c4b6;
+// $color-19-t: #71c4b622;
+$color-20: #F0F0F0;
+$color-21: #EEF1F4;
+$color-22: #333333;
+
+$color-background-dark: $color-12;
+$color-background-dark-icon: $color-13;
+$color-background-medium: $color-2;
+$color-background-light: $color-20;
+$color-background-white: $color-1;
+
+$color-border-input-box: $color-4;
+$color-border-input-box-active: $color-9;
+$color-border-separator: $color-2;
+
+$color-link-dark-bg: $color-1;
+$color-link-hover-dark-bg: $color-5;
+$color-link-active-dark-bg: $color-9;
+
+$color-link-light-bg: $color-9;
+$color-link-hover-light-bg: $color-5;
+$color-link-active-light-bg: $color-1;
+
+$color-link-medium: $color-6;
+$color-link-medium-hover: $color-8;
+$color-link-medium-active: $color-1;
+
+$color-link-border-active: $color-8;
+
+$color-error: $color-11;
+
+
+/*character styles*/
+$character-1: 8;
+$character-2: 10;
+$character-3: 12;
+$character-4: 14;
+$character-5: 16;
+$character-6: 19;
+$character-7: 21;
+$character-8: 28;
+$character-9: 32;
+$character-10: 54;
+
+
+$font-size-header-title: $character-6 + px;
+$font-size-header-menu: $character-6 + px;
+$font-size-blue-button: $character-3 + px;
+$font-size-splash-link: $character-6 + px;
+$font-size-splash-title: $character-9 + px;
+$font-size-left-menu-icon: $character-7 + px;
+$font-size-left-menu-link: $character-4 + px;
+$font-size-dashboard-link: $character-7 + px;
+$font-size-dashboard-value: $character-10 + px;
+$font-size-dashboard-label: $character-3 + px;
+$font-size-dashboard-icon: $character-8 + px;
+$font-size-dashboard-title: $character-7 + px;
+$font-size-placeholder: $character-3 + px;
+$table-header-height: $menu-size-1 + px;
+$font-size-table-header: $character-3 + px;
+$font-size-table-header-secondary: $character-2 + px;
+
+$pagination-hover-bg:               $color-9;
+$pagination-hover-border-color:     $color-9;
+
+$pagination-active-bg:              $color-9;
+$pagination-active-border-color:    $color-9;
+$font-family: "Avenir", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, sans-serif !important;
+
+$border-separator-height: 2px;
+$border-separator-thick-height: 4px;
+
+/*menu width*/
+$menu-size-1: 60;
+$menu-size-2: 230;
+$menu-size-3: 70;
+$menu-size-4: 185;
+$menu-size-5: 870;
+$menu-size-6: 700;
+$menu-size-7: 440;
+$padding: 15;
+$menu-narrow-width: $menu-size-1 + px;
+$menu-wide-width: $menu-size-2 + px;
+$menu-height: 85 + px;
+$body-narrow-padding-width: $menu-size-2 + $padding + px;
+$body-wide-padding-width: $menu-size-3 + px;
+$dashboard-header-height: 42px;
+
+/*dashboard dimensions*/
+$dashboard-alert-height: $menu-size-4 + px;
+$dashboard-info-height: $menu-size-5 + px;
+$dashboard-list-height: $menu-size-7 + px;
+$dashboard-info-content-height: $menu-size-6 + px;
+
+/*legacy link colour definitions*/
+$link-color-1: #2fffe7;
+$link-color-2: #00e9cd;
+$link-color-3: #485167;
+$link-color-4: #00a381;
+
+.pc-table {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.pc-table th {
+  height: 35px;
+  line-height: 1em;
+  background-color: $color-21;
+  /*border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: $color-6;*/
+  color: $color-2;
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: $font-size-table-header;
+  vertical-align: middle;
+  padding: 0 5px 0 5px;
+  text-align: left;
+}
+
+.pc-table th.primary {
+  height: $table-header-height;
+  line-height: 1em;
+  background-color: $color-2;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: $color-6;
+  color: $color-15;
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: $font-size-table-header;
+  vertical-align: middle;
+  padding: 0 $padding + px 0 0;
+}
+
+.pc-table th.secondary {
+  height: $table-header-height;
+  line-height: 1em;
+  background-color: $color-4;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: $color-6;
+  color: $color-15;
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: $font-size-table-header-secondary;
+  vertical-align: middle;
+  padding: 0 $padding + px 0 0;
+}
+
+.pc-table tbody td {
+  background-color: $color-1;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: $color-21;
+  color: $color-10;
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: $font-size-table-header;
+  padding: 7px 5px;
+  text-align: left;
+}
+
+.pc-table tbody td.centered, .pc-table tr th.centered, .pc-table thead th.centered, th.mat-header-cell.centered {
+  text-align: center;
+}
+
+th.centered div.mat-sort-header-container {
+  justify-content: center;
+}
+
+.pc-table tbody td .table-amount, td.mat-cell span.table-amount {
+  display: inline-block;
+  min-width: 100px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.pc-table tbody td.secondary {
+  background-color: $color-1;
+  border-bottom-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-color: $color-2;
+  color: $color-7;
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: $font-size-table-header-secondary;
+  padding: $padding + px $padding + px $padding + px $padding + px;
+  vertical-align: top;
+}
+
+.pc-table a {
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: $font-size-table-header;
+}
+
+.pc-table a .fa {
+  font-weight: normal;
+  font-size: $font-size-table-header;
+}
+
+.pc-table tfoot td {
+  width: 100%;
+  height: $table-header-height!important;
+  line-height: $table-header-height!important;
+  background-color: $color-2!important;
+  border-top-style: solid!important;
+  border-top-width: 4px!important;
+  border-top-color: $color-6!important;
+}
+
+.expandedRowHeader {
+  background-color: $color-3;
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: $font-size-table-header;
+  vertical-align: middle;
+  padding: 0 $padding + px 0 $padding + px;
+  margin: $padding + px $padding + px $padding + px $padding + px;
+}
+
+.inlineExpanded {
+  margin: 7px;
+  background-color: $color-1;
+}
+
+.expandedRow {
+  background-color: $color-3;
+  border-left-color: $color-9;
+  border-left-style: solid;
+  border-left-width: 4px;
+}
+
+.expandedRowTop {
+  background-color: $color-3;
+  border-left-color: $color-9;
+  border-left-style: solid;
+  border-left-width: 4px;
+}
+
+.expandedRowTop td {
+  background-color: $color-3;
+  border-bottom-style: none;
+}
+
+.collapsedRowTop {
+  background-color: $color-1;
+}
+
+.expandedLabel {
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: $font-size-table-header;
+  color: $color-7;
+}
+
+.expandedLabelRight {
+  font-family: $font-family;
+  font-weight: normal;
+  text-align: right;
+  font-size: $font-size-table-header;
+  color: $color-7;
+}
+
+.expandedValue {
+  font-family: $font-family;
+  font-weight: bolder;
+  font-size: $font-size-table-header;
+  color: $color-10;
+}
+
+.expandedSubject {
+  font-family: $font-family;
+  font-weight: bolder;
+  font-size: $character-6 + px;
+  color: $color-10;
+}
+
+.expandedBodyText {
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: $font-size-table-header;
+  color: $color-10;
+}
+
+.pc-table tbody td.expandCol {
+  width: 50px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.pc-click-row:hover {
+  cursor: pointer;
+}
+
+.pc-click-row:hover td {
+  cursor: pointer;
+}
+
+.reply {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  position: relative;
+  top: -10px;
+}
+
+.reply a:hover {
+  text-decoration: none;
+}
+
+.th-dropdown {
+  width: 25px;
+  position: relative;
+}
+
+.th-dropdown:hover .th-dropdown-content {
+  z-index: 10000;
+  display: block;
+}
+
+.th-dropdown .fa-ellipsis-v {
+  font-size: 19px;
+  vertical-align: middle;
+  padding: 7px;
+}
+
+.th-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0px;
+  border-color: $color-16;
+  border-width: 1px;
+  background-color: $color-1;
+  box-shadow: 0 3px 6px $color-17;
+  z-index: 9999;
+  font-size: $character-4 + px;
+}
+
+.th-dropdown-content-menu {
+  padding: 0px 10px;
+  font-weight: normal;
+  line-height: 50px;
+  max-height: 500px;
+  background-color: $color-3;
+  z-index: 10000;
+  color: $color-10;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.th-dropdown-content-menu-option {
+  height: 28px;
+  line-height: 1em;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+}
+
+ul.pagination {
+  .page-link {
+    font-size: 14px;
+    color: black;
+    &:hover {
+      background-color: $pagination-hover-bg;
+      border-color: $pagination-hover-border-color;
+    }
+  }
+
+  .page-item {
+    font-size: 14px;
+    color: black;
+    &.active .page-link {
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border-color;
+    }
+  }
+  .page-item.disabled span {
+    color: lightgray;
+  }
+}
+ngb-pagination ::ng-deep ul > li:not(.active) > a {
+  background-color: black !important;
+}
+
+ngb-pagination ::ng-deep ul > li.active > a {
+  background-color: black !important;
+}
+
+

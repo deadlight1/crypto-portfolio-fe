@@ -1,0 +1,449 @@
+/*color styles*/
+$color-transparent: rgba(0, 0, 0, 0);
+$color-1: #ffffff;
+$color-2: #023C5B;
+$color-3: #F8F9F9;
+$color-4: #CCD4D7;
+$color-5: #A8B4BB;
+$color-6: #C3C3C3;
+$color-7: #666666;
+$color-8: #448bb0;
+$color-9: #478EB3;
+$color-10: #364046;
+$color-11: #A14046;
+// $color-11-t: #A1404622;
+$color-12: #022D44;
+$color-13: #033C5A;
+$color-14: rgba(0, 0, 0, .2);
+$color-15: #5C6E78;
+$color-16: #DCE1E4;
+$color-17: rgba(0, 0, 0, .16);
+$color-18: rgba(0, 0, 0, 0);
+$color-title-light: $color-2;
+$color-19: #71c4b6;
+// $color-19-t: #71c4b622;
+$color-20: #F0F0F0;
+$color-21: #EEF1F4;
+$color-22: #333333;
+
+$color-background-dark: $color-12;
+$color-background-dark-icon: $color-13;
+$color-background-medium: $color-2;
+$color-background-light: $color-20;
+$color-background-white: $color-1;
+
+$color-border-input-box: $color-4;
+$color-border-input-box-active: $color-9;
+$color-border-separator: $color-2;
+
+$color-link-dark-bg: $color-1;
+$color-link-hover-dark-bg: $color-5;
+$color-link-active-dark-bg: $color-9;
+
+$color-link-light-bg: $color-9;
+$color-link-hover-light-bg: $color-5;
+$color-link-active-light-bg: $color-1;
+
+$color-link-medium: $color-6;
+$color-link-medium-hover: $color-8;
+$color-link-medium-active: $color-1;
+
+$color-link-border-active: $color-8;
+
+$color-error: $color-11;
+
+
+/*character styles*/
+$character-1: 8;
+$character-2: 10;
+$character-3: 12;
+$character-4: 14;
+$character-5: 16;
+$character-6: 19;
+$character-7: 21;
+$character-8: 28;
+$character-9: 32;
+$character-10: 54;
+
+
+$font-size-header-title: $character-6 + px;
+$font-size-header-menu: $character-6 + px;
+$font-size-blue-button: $character-3 + px;
+$font-size-splash-link: $character-6 + px;
+$font-size-splash-title: $character-9 + px;
+$font-size-left-menu-icon: $character-7 + px;
+$font-size-left-menu-link: $character-4 + px;
+$font-size-dashboard-link: $character-7 + px;
+$font-size-dashboard-value: $character-10 + px;
+$font-size-dashboard-label: $character-3 + px;
+$font-size-dashboard-icon: $character-8 + px;
+$font-size-dashboard-title: $character-7 + px;
+$font-size-placeholder: $character-3 + px;
+
+$font-family: "Avenir", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, sans-serif !important;
+
+$border-separator-height: 2px;
+$border-separator-thick-height: 4px;
+
+/*menu width*/
+$menu-size-1: 60;
+$menu-size-2: 230;
+$menu-size-3: 70;
+$menu-size-4: 185;
+$menu-size-5: 870;
+$menu-size-6: 700;
+$menu-size-7: 440;
+$padding: 15;
+$menu-narrow-width: $menu-size-1 + px;
+$menu-wide-width: $menu-size-2 + px;
+$menu-height: 85 + px;
+$body-narrow-padding-width: $menu-size-2 + $padding + px;
+$body-wide-padding-width: $menu-size-3 + px;
+$dashboard-header-height: 42px;
+
+/*dashboard dimensions*/
+$dashboard-alert-height: $menu-size-4 + px;
+$dashboard-info-height: $menu-size-5 + px;
+$dashboard-list-height: $menu-size-7 + px;
+$dashboard-info-content-height: $menu-size-6 + px;
+
+/*legacy link colour definitions*/
+$link-color-1: #2fffe7;
+$link-color-2: #00e9cd;
+$link-color-3: #485167;
+$link-color-4: #00a381;
+
+body {
+  margin: 0px;
+  background-color: $color-2;
+}
+
+::placeholder {
+  color: #666666;
+  font-size: $font-size-placeholder;
+}
+
+.column-centered {
+  display: block;
+  margin: auto;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.centered {
+  text-align: center;
+}
+
+.center-fields {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+.separator {
+  color: $color-border-separator;
+  height: $border-separator-height;
+  line-height: $border-separator-height;
+  margin-bottom: 10px;
+}
+
+.separator-thick {
+  color: $color-border-separator;
+  height: $border-separator-thick-height;
+  line-height: $border-separator-thick-height;
+}
+
+.dropdown {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+}
+
+.dropdown-pc {
+  display: inline-block;
+  padding: 0;
+}
+
+.dropdown-right {
+  float: right!important;
+  padding: 0;
+}
+
+.gear-dropdown {
+  float: right!important;
+  width: 76px;
+  height: 40px;
+  padding: 0;
+}
+
+.gear-dropdown-left {
+  float: left!important;
+  width: 125px;
+  height: 40px;
+  padding: 0;
+}
+
+.site-dropdown {
+  display: inline-block;
+  padding: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-color: $color-16;
+  border-width: 1px;
+  background-color: $color-1;
+  min-width: 270px;
+  box-shadow: 0 3px 6px $color-17;
+  z-index: 9999;
+  font-size: $character-4 + px;
+}
+
+.dropdown-content-click {
+  position: absolute;
+  border-color: $color-16;
+  border-width: 1px;
+  background-color: $color-1;
+  min-width: 270px;
+  box-shadow: 0 3px 6px $color-17;
+  z-index: 10000;
+  font-size: $character-4 + px;
+}
+
+.show-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* align vertical */
+  margin-top: -20px;
+  z-index: 1000;
+  height: 60px;
+  line-height: 60px;
+}
+
+.dropdown-content-regular {
+  position: absolute;
+  border-color: $color-16;
+  border-width: 1px;
+  background-color: $color-1;
+  min-width: 270px;
+  box-shadow: 0 3px 6px $color-17;
+  z-index: 10000;
+  font-size: $character-4 + px;
+}
+
+.dropdown-content-left {
+  position: relative;
+  border-color: $color-16;
+  border-width: 1px;
+  background-color: $color-1;
+  width: 270px;
+  box-shadow: 0 3px 6px $color-17;
+  z-index: 10000;
+  font-size: $character-4 + px;
+  left: -194px;
+  padding-top: 5px;
+}
+
+.dropdown-content-menu {
+  padding-top: 25px;
+  font-weight: normal;
+  line-height: 50px;
+  max-height: 500px;
+  background-color: $color-3;
+  z-index: 10000;
+  color: $color-10;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.dropdown-content-menu-option {
+  height: 35px;
+  line-height: 1em;
+  position: relative;
+  float: left;
+  top: 50%;
+  text-align: left;
+  backface-visibility: hidden;
+  transform: translate3d(0, -50%, 0) scale(1.0, 1.0);
+}
+
+.site-menu-option {
+  background-color: $color-3;
+  color: $color-10;
+}
+
+.dropdown:hover .dropdown-content {
+  z-index: 10000;
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.dropdown-content-menu-option a {
+  margin-left: 15px;
+  font-size: 16px;
+  color: $color-10;
+  font-weight: normal;
+}
+
+.negative_number {
+  color: $color-11 !important;
+}
+
+.invisible {
+  display: none;
+}
+
+.rotate {
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+  /* IE */
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+  -o-transform: rotate(-90deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  transform: rotate(-90deg);
+}
+
+
+a {
+  font-size: $font-size-splash-link;
+  font-weight: 500;
+  color: $color-9;
+}
+
+a:hover {
+  color: $color-8;
+  text-decoration: none;
+}
+
+a:focus {
+  color: $color-8;
+}
+
+a i {
+  font-size: $font-size-left-menu-icon;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
+}
+
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.margin-top-25 {
+  margin-top: 25px;
+}
+
+.dashboard-right {
+  margin-right: -15px;
+}
+
+.onboard-nav {
+  min-width: 200px;
+}
+
+.left-col {
+  min-width: 360px;
+  display: block;
+}
+
+.alertIcon {
+  display: inline-block;
+  vertical-align: top;
+  width: 5em;
+}
+
+.alertTitle {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.icon {
+  width:40px;
+  height: 40px;
+}
+
+.smallIcon {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+}
+
+.notesIcon {
+  display: inline-block;
+  vertical-align: top;
+  width: 5em;
+}
+
+.workGadgetIcon {
+  display: inline;
+  vertical-align: top;
+}
+
+.taskName {
+  display: inline;
+  vertical-align: top;
+}
+
+.alignTop {
+  vertical-align: top;
+}
+
+.inlineBlockTop {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.fontAwesome {
+  font-size:22px;
+  color:green;
+}
+
+.form-title {
+  font-weight: 600;
+  color: #023C5B;
+  font-size: 21px;
+}
+
+.subtitle {
+  color: $color-22;
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-sub-title {
+  font-size: 14px;
+  margin: 5px;
+}
+
+.error-message {
+  text-align: center;
+  color: #d93434;
+  margin: auto;
+  width: 80%;
+}
+
+.fa-group {
+  font-size: 19px;
+}
